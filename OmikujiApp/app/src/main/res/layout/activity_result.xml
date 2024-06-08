@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ResultActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/top_bg"
-        android:scaleType="centerCrop"/>
+        android:src="@drawable/result_bg"
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,9 +23,10 @@
             android:layout_height="0dp"
             android:layout_weight="1">
             <TextView
+                android:id="@+id/result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/main_title"
+                tools:text="結果"
                 android:layout_gravity="center"
                 android:textSize="30pt"
                 android:textColor="@color/black" />
@@ -35,7 +37,8 @@
             android:layout_height="0dp"
             android:layout_weight="2">
             <ImageView
-                android:src="@drawable/omikuji"
+                android:id="@+id/image"
+                android:src="@drawable/great_blessing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </FrameLayout>
@@ -46,10 +49,10 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/nextButton"
+                android:id="@+id/againButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_title"
+                android:text="@string/again_title"
                 android:layout_gravity="center"
                 android:textSize="10pt"
                 android:textColor="@color/black"
