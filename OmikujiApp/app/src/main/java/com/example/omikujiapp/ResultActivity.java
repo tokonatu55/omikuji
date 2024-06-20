@@ -2,6 +2,8 @@ package com.example.omikujiapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +18,7 @@ public class ResultActivity extends AppCompatActivity {
     public static final String KEY_RESULT_ID = "result_id";
     private TextView resultTextView;
     private ImageView resultImageView;
+    private Button againButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,14 @@ public class ResultActivity extends AppCompatActivity {
         int resultId = getIntent().getIntExtra(KEY_RESULT_ID, -1);
         resultTextView = findViewById(R.id.result);
         resultImageView = findViewById(R.id.image);
+        againButton = findViewById(R.id.againButton);
+
+        againButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
+        });
 
 
         String resultStr = "";
